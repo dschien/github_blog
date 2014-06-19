@@ -7,6 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+DEPLOYREPOSITORY=dschien.github.io
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -94,6 +95,20 @@ dropbox_upload: publish
 
 ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+
+deploy: publish
+	if test -d _build; \
+	then echo " (_build directory exists)"; \
+	else mkdir _build; \
+	fi
+	if test -d _build/$(DEPLOYREPOSITORY); \
+	then echo "  (repository directory exists)"; \
+	else cd _build && git clone git@github.com:dschien/$(DEPLOYREPOSITORY).git; \
+	fi
+	cd _build/$(DEPLOYREPOSITORY) && git pull
+	rsync -r $(OUTPUTDIR)/* _build/$(DEPLOYREPOSITORY)/
+	cd _build/$(DEPLOYREPOSITORY) && git add . && git commit -m "make deploy"
+	cd _build/$(DEPLOYREPOSITORY) && git push origin master
 
 s3_upload: publish
 	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
