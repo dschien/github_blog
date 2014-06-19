@@ -16,14 +16,14 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS =  (('Pelican', 'http://getpelican.com/'),
-          ('Python.org', 'http://python.org/'),
-          ('Jinja2', 'http://jinja.pocoo.org/'),
-          ('You can modify those links in your config file', '#'),)
+# LINKS =  (('Pelican', 'http://getpelican.com/'),
+#           ('Python.org', 'http://python.org/'),
+#           ('Jinja2', 'http://jinja.pocoo.org/'),
+#           ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('You can add links in your config file', '#'),
+#           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -49,11 +49,11 @@ ARTICLE_SAVE_AS = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 # Title menu options
 MENUITEMS = [('Archives', '/archives.html'),
-             ('Home Page', 'http://www.astro.washington.edu/users/vanderplas')]
+             ('Home Page', 'http://www.cs.bris.ac.uk/home/csxds/')]
 NEWEST_FIRST_ARCHIVES = False
 
 #Github include settings
-GITHUB_USER = 'dschien'
+# GITHUB_USER = 'dschien'
 #GITHUB_REPO_COUNT = 0
 #GITHUB_SKIP_FORK = True
 #GITHUB_SHOW_USER_LINK = True
@@ -80,8 +80,13 @@ CODE_DIR = 'downloads/code'
 NOTEBOOK_DIR = 'downloads/notebooks'
 
 # Theme and plugins
-THEME = 'pelican-octopress-theme/'
+THEME = 'pelipress/'
 
+MENUBRAND = [('Daniel Schien', 'http://dschien.github.io'),]
+SOCIAL_SIDEBAR_TOP = (
+    # ('Google+', 'https://plus.google.com/116700712402100417502/posts', '<i class="icon-google-plus-sign"></i>'),
+    # ('Twitter', 'https://twitter.com/schien', '<i class="icon-twitter-sign"></i>'),
+)
 
 DISPLAY_PAGES_ON_MENU = False
 
