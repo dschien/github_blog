@@ -1,2 +1,5 @@
 output
 _build
+**.pyc
+.idea
+_nb_header.html
