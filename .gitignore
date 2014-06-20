@@ -3,3 +3,5 @@ _build
 **.pyc
 .idea
 _nb_header.html
+pelican.pid
+srv.pid
