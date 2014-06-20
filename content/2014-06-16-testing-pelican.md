@@ -9,3 +9,5 @@ You have to start somewhere
 
 # I test pelican
 This is my first post
+
+{% notebook Test.ipynb cells[1:] %}

@@ -3,9 +3,11 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Daniel Schien'
-SITENAME = u'Daniel Schien'
+SITENAME = u'Code für Forschung'
+# relative path on server
+# SITEURL = 'dschien.github.io'
 SITEURL = ''
-
+#
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
@@ -82,7 +84,7 @@ NOTEBOOK_DIR = 'downloads/notebooks'
 # Theme and plugins
 THEME = 'pelipress/'
 
-MENUBRAND = [('Daniel Schien', 'http://dschien.github.io'),]
+MENUBRAND = [('Code für Forschung', 'http://dschien.github.io'),]
 SOCIAL_SIDEBAR_TOP = (
     # ('Google+', 'https://plus.google.com/116700712402100417502/posts', '<i class="icon-google-plus-sign"></i>'),
     # ('Twitter', 'https://twitter.com/schien', '<i class="icon-twitter-sign"></i>'),
